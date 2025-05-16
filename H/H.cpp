@@ -6,7 +6,7 @@
 using namespace std;
 
 int main(){
-    int nums[5];
+    long long int nums[5];
     string text;
     getline(cin, text);
     stringstream ss(text);
@@ -15,6 +15,7 @@ int main(){
         ss >> nums[i];
     }
 
-    cout << accumulate(nums, nums + 5, 0) - *max_element(nums, nums +5) << " ";
-    cout << accumulate(nums, nums + 5, 0) - *min_element(nums, nums +5) << endl;
+    long long int minSum = accumulate(nums, nums + 5, 0LL) - *max_element(nums, nums +5);
+    long long int maxSum = accumulate(nums, nums + 5, 0LL) - *min_element(nums, nums +5);
+    cout << minSum << " " << maxSum << endl;
 }
