@@ -11,8 +11,11 @@ int main(){
     hours = stoi(text.substr(0,2));
     ampm = text.substr(8,2);
     
-    if(ampm == "PM"){
+    if(ampm == "PM" && hours!=12){
         hours += 12;
+    }
+    else if(ampm == "AM" && hours==12){
+        hours = 0;
     }
     if(hours<10){
         cout << '0' ;
